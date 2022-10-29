@@ -14,9 +14,29 @@ class _ShopScreenState extends State<ShopScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.5,
-        title: Text("Chào Hùng!", style: TextStyle(color: Colors.black),),
+        title: Text(
+          "Chào Hùng!",
+          style: TextStyle(color: Colors.black),
+        ),
         actions: [
-          IconButton(onPressed: () {}, icon: ImageIcon(AssetImage("assets/icons/Search.png"), color: Colors.grey,))
+          IconButton(
+              onPressed: () {},
+              icon: ImageIcon(
+                AssetImage("assets/icons/Search.png"),
+                color: Colors.grey,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: ImageIcon(
+                AssetImage("assets/icons/sliders.png"),
+                color: Colors.grey,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: ImageIcon(
+                AssetImage("assets/icons/rowdown.png"),
+                color: Colors.grey,
+              )),
         ],
       ),
     );
