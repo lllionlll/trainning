@@ -1,5 +1,7 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:helloapp/Screen/ShopScreen.dart';
+import 'package:helloapp/components/item_chat.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -25,18 +27,44 @@ class _ChatScreenState extends State<ChatScreen> {
                 bottom: TabBar(
                   tabs: [
                     Tab(
-                      child: Text("Tất cả", style: TextStyle(color: Colors.grey, fontSize: 18)),
+                      child: Text("Tất cả",
+                          style: TextStyle(color: Colors.grey, fontSize: 18)),
                     ),
                     Tab(
-                      child: Text("Nhóm", style: TextStyle(color: Colors.grey, fontSize: 18)),
+                      child: Text("Nhóm",
+                          style: TextStyle(color: Colors.grey, fontSize: 18)),
                     ),
                   ],
                 ),
               ),
               body: Container(
-                child: SizedBox(
+                color: Colors.white,
+                height: double.infinity,
+                child: Container(
+                  height: 80,
                   child: TabBarView(
-                    children: [Text("123"), Text("234")],
+                    children: [
+                      ListView(
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          ItemChat(),
+                          ItemChat(),
+                          ItemChat(), 
+                          ItemChat(),
+                          ItemChat(), 
+                          ItemChat(),
+                          ItemChat(),
+                          ItemChat(),
+                          ItemChat(), 
+                          ItemChat(),
+                          ItemChat(), 
+                          ItemChat(),
+                        ],
+                      ),
+                      Container(
+                        color: Colors.green,
+                      )
+                    ],
                   ),
                 ),
               )),
