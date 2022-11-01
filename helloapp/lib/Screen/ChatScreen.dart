@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:helloapp/Screen/ShopScreen.dart';
 import 'package:helloapp/components/item_chat.dart';
+import 'package:helloapp/iconsax.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -11,6 +12,13 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  String _fontFamilyMedium = "SF-Pro-Display-Medium";
+  String _fontFamilyRegular = "SF-Pro-Display-Regular";
+  TextStyle style1 = TextStyle(
+      color: Colors.blue, fontSize: 17, fontFamily: "SF-Pro-Display-Medium");
+  TextStyle style2 = TextStyle(
+      color: Colors.grey, fontSize: 17, fontFamily: "SF-Pro-Display-Regular");
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,20 +27,32 @@ class _ChatScreenState extends State<ChatScreen> {
         child: DefaultTabController(
           length: 2,
           child: Scaffold(
-              appBar: AppBar(
-                elevation: 0,
-                toolbarHeight: 0,
-                bottomOpacity: 1,
-                backgroundColor: Colors.white,
-                bottom: TabBar(
+              backgroundColor: Colors.white,
+              appBar: PreferredSize(
+                preferredSize: Size(double.infinity, 40),
+
+                // elevation: 0,
+                // toolbarHeight: 0,
+                // bottomOpacity: 1,
+                // backgroundColor: Colors.white,
+                child: TabBar(
+                  onTap: (index) {
+                    setState(() {
+                      _index = index;
+                    });
+                  },
+                  // indicatorSize: TabBarIndicatorSize.label,
+                  indicatorPadding: EdgeInsets.zero,
+                  labelPadding: EdgeInsets.zero,
+                  // isScrollable: true,
                   tabs: [
                     Tab(
                       child: Text("Tất cả",
-                          style: TextStyle(color: Colors.grey, fontSize: 18)),
+                          style: (_index == 0 ? style1 : style2)),
                     ),
                     Tab(
-                      child: Text("Nhóm",
-                          style: TextStyle(color: Colors.grey, fontSize: 18)),
+                      child:
+                          Text("Nhóm", style: (_index == 1 ? style1 : style2)),
                     ),
                   ],
                 ),
@@ -49,15 +69,15 @@ class _ChatScreenState extends State<ChatScreen> {
                         children: [
                           ItemChat(),
                           ItemChat(),
-                          ItemChat(), 
-                          ItemChat(),
-                          ItemChat(), 
                           ItemChat(),
                           ItemChat(),
                           ItemChat(),
-                          ItemChat(), 
                           ItemChat(),
-                          ItemChat(), 
+                          ItemChat(),
+                          ItemChat(),
+                          ItemChat(),
+                          ItemChat(),
+                          ItemChat(),
                           ItemChat(),
                         ],
                       ),
@@ -82,7 +102,7 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: EdgeInsets.zero,
           onPressed: () {},
           icon: Icon(
-            Icons.arrow_back,
+            Iconsax.arrow_left,
             color: Colors.black,
           )),
       title: Row(
@@ -91,6 +111,7 @@ class _ChatScreenState extends State<ChatScreen> {
             "HelloJob",
             style: TextStyle(
               color: Colors.black,
+              fontFamily: _fontFamilyMedium,
             ),
           ),
           Container(
@@ -114,7 +135,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 width: 40,
                 child: Text(
                   "1000",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(
+                      color: Colors.black, fontFamily: _fontFamilyRegular),
                 ))
           ],
         ),
@@ -127,8 +149,9 @@ class _ChatScreenState extends State<ChatScreen> {
             Container(
                 width: 40,
                 child: Text(
-                  "1000",
-                  style: TextStyle(color: Colors.black),
+                  "3000",
+                  style: TextStyle(
+                      color: Colors.amber, fontFamily: _fontFamilyRegular),
                 ))
           ],
         ),

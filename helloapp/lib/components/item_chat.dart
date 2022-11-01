@@ -9,6 +9,8 @@ class ItemChat extends StatefulWidget {
 }
 
 class _ItemChatState extends State<ItemChat> {
+  String _fontFamilyMedium = "SF-Pro-Display-Medium";
+  String _fontFamilyRegular = "SF-Pro-Display-Regular";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,12 +38,16 @@ class _ItemChatState extends State<ItemChat> {
                 Text(
                   "Thông báo hệ thống",
                   style: TextStyle(
-                    color: Colors.black,
-                  ),
+                      color: Colors.black,
+                      fontFamily: _fontFamilyMedium,
+                      fontSize: 17),
                 ),
                 Text(
                   "[Danh sách ứng viên tiềm năng]",
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontFamily: _fontFamilyRegular,
+                      fontSize: 15),
                 )
               ],
             ),
@@ -57,18 +63,22 @@ class _ItemChatState extends State<ItemChat> {
               children: [
                 Text(
                   "7 ngày",
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontFamily: _fontFamilyRegular,
+                      fontSize: 13),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 5),
                   child: Badge(
-                    shape: BadgeShape.square,
-                    animationType: BadgeAnimationType.scale,
+                    animationType: BadgeAnimationType.slide,
                     badgeContent: Text(
-                      "+99",
-                      style: TextStyle(color: Colors.white, fontSize: 10),
+                      "1",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                          fontFamily: _fontFamilyRegular),
                     ),
-                    borderRadius: BorderRadius.circular(100),
                   ),
                 )
               ],

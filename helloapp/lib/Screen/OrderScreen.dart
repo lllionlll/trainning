@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloapp/iconsax.dart';
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
@@ -8,6 +9,8 @@ class OrderScreen extends StatefulWidget {
 }
 
 class _OrderScreenState extends State<OrderScreen> {
+  String _fontFamilyMedium = "SF-Pro-Display-Medium";
+  String _fontFamilyRegular = "SF-Pro-Display-Regular";
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,7 +23,7 @@ class _OrderScreenState extends State<OrderScreen> {
             padding: EdgeInsets.zero,
             onPressed: () {},
             icon: Icon(
-              Icons.arrow_back,
+              Iconsax.arrow_left,
               color: Colors.black,
             )),
         title: Column(
@@ -29,14 +32,15 @@ class _OrderScreenState extends State<OrderScreen> {
           children: [
             Text(
               "Mai Đình Huy",
-              style: TextStyle(fontSize: 16, color: Colors.black),
+              style: TextStyle(fontSize: 17, color: Colors.black, fontFamily: _fontFamilyMedium, ),
             ),
             Text(
               "6 phút trước",
               style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 15,
                   color: Colors.black,
-                  fontWeight: FontWeight.normal),
+                  fontFamily: _fontFamilyRegular, 
+                 ),
             )
           ],
         ),
@@ -55,7 +59,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     Icon(
                       Icons.warning_amber,
                       color: Colors.grey,
-                      size: 20,
+                      size: 24,
                     ),
                     "Báo xấu",
                     false),
@@ -64,6 +68,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     Icon(
                       Icons.mode_edit_outline_outlined,
                       color: Colors.grey,
+                      size: 24,
                     ),
                     "Đổi tên gợi nhớ",
                     false),
@@ -72,12 +77,13 @@ class _OrderScreenState extends State<OrderScreen> {
                     Icon(
                       Icons.star_border_sharp,
                       color: Colors.grey,
+                      size: 24,
                     ),
                     "Đánh dấu đối tác",
                     false),
                 Container(
                   width: size.width,
-                  height: 200,
+                  height: 170,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -86,8 +92,9 @@ class _OrderScreenState extends State<OrderScreen> {
                           Icon(
                             Icons.image_outlined,
                             color: Colors.grey,
+                            size: 24,
                           ),
-                          "Đơn hàng đã nhận",
+                          "Form đã nhận",
                           true),
                       Container(
                         width: size.width, 
@@ -100,7 +107,7 @@ class _OrderScreenState extends State<OrderScreen> {
                             itemform(), 
                             Container(
                               width: 50,
-                              child: Icon(Icons.arrow_forward, color: Colors.cyan,),
+                              child: Icon(Icons.arrow_forward, color: Colors.cyan, size: 24,),
                             )
                           ],
                         ),
@@ -110,7 +117,61 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
                 Container(
                   width: size.width,
-                  height: 200,
+                  height: 130,
+                  child: Column(  
+                    children: [
+                       itemaction(
+                          size,
+                          Icon(
+                            Icons.image_outlined,
+                            color: Colors.grey,
+                            size: 24,
+                          ),
+                          "Đơn hàng đã gửi",
+                          true),
+                        Container(
+                          margin: EdgeInsets.only(left: 50),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                child: Icon(Icons.arrow_forward, color: Colors.cyan, size: 24,),
+                              ),
+                            ],
+                          ),
+                        )
+                    ],
+                  ),
+                ),
+                Container(
+                  width: size.width,
+                  height: 170,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -119,8 +180,9 @@ class _OrderScreenState extends State<OrderScreen> {
                           Icon(
                             Icons.image_outlined,
                             color: Colors.grey,
+                            size: 24,
                           ),
-                          "Đơn hàng đã gửi",
+                          "Form đã gửi",
                           true),
                       Container(
                         width: size.width, 
@@ -142,11 +204,66 @@ class _OrderScreenState extends State<OrderScreen> {
                     ],
                   ),
                 ),
+                Container(
+                  width: size.width,
+                  height: 130,
+                  child: Column(  
+                    children: [
+                       itemaction(
+                          size,
+                          Icon(
+                            Icons.image_outlined,
+                            color: Colors.grey,
+                            size: 24,
+                          ),
+                          "Ảnh, file đã trao đổi",
+                          true),
+                        Container(
+                          margin: EdgeInsets.only(left: 50),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                color: Colors.green,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 70,
+                                height: 70, 
+                                child: Icon(Icons.arrow_forward, color: Colors.cyan, size: 24,),
+                              ),
+                            ],
+                          ),
+                        )
+                    ],
+                  ),
+                ),
                 itemaction(
                     size,
                     Icon(
                       Icons.person_add,
                       color: Colors.grey,
+                      size: 24,
                     ),
                     "Tạo nhóm với Mai Đình Huy",
                     true),
@@ -155,6 +272,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     Icon(
                       Icons.person_add,
                       color: Colors.grey,
+                      size: 24,
                     ),
                     "Thêm Mai Đình Huy vào nhóm",
                     true),
@@ -163,6 +281,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     Icon(
                       Icons.person_add,
                       color: Colors.grey,
+                      size: 24,
                     ),
                     "Xem nhóm chung (7)",
                     true),
@@ -171,6 +290,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     Icon(
                       Icons.block,
                       color: Colors.grey,
+                      size: 24,
                     ),
                     "Chặn tin nhắn",
                     false),
@@ -179,6 +299,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     Icon(
                       Icons.delete_outlined,
                       color: Colors.grey,
+                      size: 24,
                     ),
                     "Xóa lịch sử trò chuyện",
                     false),
@@ -216,7 +337,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           TextSpan(
                                             text: "95%",
                                             style: TextStyle(
-                                                color: Colors.amber),
+                                                color: Colors.amber, fontFamily: _fontFamilyRegular, fontSize: 13),
                                           ),
                                         ]),
                                   ), 
@@ -226,7 +347,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           TextSpan(
                                             text: "88%",
                                             style: TextStyle(
-                                                color: Colors.black),
+                                                color: Colors.black, fontFamily: _fontFamilyRegular, fontSize: 13),
                                           ),
                                         ]),
                                   )
@@ -245,23 +366,23 @@ class _OrderScreenState extends State<OrderScreen> {
                                   Text(
                                     "(Chưa rõ)",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 12),
+                                        color: Colors.grey, fontSize: 11, fontFamily: _fontFamilyRegular),
                                   ),
                                   Text(
                                     "30 tuổi - Tháng...",
-                                    style: TextStyle(fontSize: 12),
+                                    style: TextStyle(fontSize: 11, fontFamily: _fontFamilyMedium),
                                   ),
                                   RichText(
                                     text: TextSpan(
                                         text: "Đề xuất: ",
                                         style: TextStyle(
-                                            color: Colors.black, fontSize: 12),
+                                            color: Colors.black, fontSize: 11, fontFamily: _fontFamilyMedium),
                                         children: [
                                           TextSpan(
                                             text: "Hệ..",
                                             style: TextStyle(
                                                 color: Colors.blueAccent,
-                                                fontSize: 12),
+                                                fontSize: 11, fontFamily: _fontFamilyMedium),
                                           ),
                                         ]),
                                   )
@@ -275,7 +396,7 @@ class _OrderScreenState extends State<OrderScreen> {
 
   Container itemaction(Size size, Icon icon, String title, bool can) {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      height: 52,
       child: Column(
         children: [
           Row(
@@ -289,7 +410,7 @@ class _OrderScreenState extends State<OrderScreen> {
                 alignment: Alignment.centerLeft,
                 height: 50,
                 width: size.width - (50 * 2),
-                child: Text(title),
+                child: Text(title, style: TextStyle(fontSize: 17, fontFamily: _fontFamilyRegular),),
               ),
               Container(
                 height: 50,
@@ -299,7 +420,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     ? Icon(
                         Icons.arrow_forward_ios_outlined,
                         color: Colors.grey,
-                        size: 18,
+                        size: 17,
                       )
                     : null),
               ),
@@ -320,7 +441,7 @@ class _OrderScreenState extends State<OrderScreen> {
     return Container(
       width: 170,
       height: 100,
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 20, bottom: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -338,8 +459,8 @@ class _OrderScreenState extends State<OrderScreen> {
                 Container(
                   child: Column(
                     children: [
-                      Container(child: Text("Tìm")),
-                      Container(child: Text("tin nhắn"))
+                      Container(child: Text("Tìm", style: TextStyle(fontFamily: _fontFamilyRegular, fontSize: 17),)),
+                      Container(child: Text("tin nhắn", style: TextStyle(fontFamily: _fontFamilyRegular, fontSize: 17)))
                     ],
                   ),
                 )
@@ -359,8 +480,8 @@ class _OrderScreenState extends State<OrderScreen> {
                 Container(
                   child: Column(
                     children: [
-                      Container(child: Text("Trang")),
-                      Container(child: Text("cá nhân"))
+                      Container(child: Text("Trang", style: TextStyle(fontFamily: _fontFamilyRegular, fontSize: 17))),
+                      Container(child: Text("cá nhân", style: TextStyle(fontFamily: _fontFamilyRegular, fontSize: 17)))
                     ],
                   ),
                 )
@@ -374,7 +495,6 @@ class _OrderScreenState extends State<OrderScreen> {
 
   Container infouser() {
     return Container(
-      margin: EdgeInsets.only(top: 10),
       height: 40,
       width: double.infinity,
       child: Column(
@@ -383,11 +503,11 @@ class _OrderScreenState extends State<OrderScreen> {
           Text(
             "Mai Đình Huy",
             style: TextStyle(
-                fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
+                fontSize: 17, color: Colors.black, fontWeight: FontWeight.w700),
           ),
           Text(
             "Chuyên XKLĐ Nhật, Hàn, Uy tín, An tâm",
-            style: TextStyle(color: Colors.grey),
+            style: TextStyle(color: Colors.grey, fontSize: 13),
           )
         ],
       ),
@@ -396,9 +516,9 @@ class _OrderScreenState extends State<OrderScreen> {
 
   Container avataruser() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
-      width: double.infinity,
-      height: 120,
+      margin: EdgeInsets.symmetric(vertical: 16),
+      width: 120,
+      height: 140,
       child: CircleAvatar(
           child: Image.asset(
         "assets/images/avataruser.png",
